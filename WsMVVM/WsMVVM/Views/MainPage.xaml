@@ -2,47 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:WsMVVM.Models"
+             xmlns:vm="clr-namespace:WsMVVM.ViewModels"
+             x:DataType="vm:MainPageViewModel"
              x:Class="WsMVVM.Views.MainPage">
     <Grid RowDefinitions="*,auto">
-        <CollectionView Margin="12,0">
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type model:MonkeyModel}">
-                    <model:MonkeyModel Name="Baboon"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/baboon.jpg"
-                                       Location="Africa and Asia" />
-                    <model:MonkeyModel Name="Capuchin Monkey"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"
-                                       Location="Central and South America" />
-                    <model:MonkeyModel Name="Red-shanked douc"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
-                                       Location="Vietnam" />
-                    <model:MonkeyModel Name="Capuchin Monkey"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"
-                                       Location="Central and South America" />
-                    <model:MonkeyModel Name="Red-shanked douc"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
-                                       Location="Vietnam" />
-                    <model:MonkeyModel Name="Capuchin Monkey"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"
-                                       Location="Central and South America" />
-                    <model:MonkeyModel Name="Red-shanked douc"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
-                                       Location="Vietnam" />
-                    <model:MonkeyModel Name="Capuchin Monkey"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"
-                                       Location="Central and South America" />
-                    <model:MonkeyModel Name="Red-shanked douc"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
-                                       Location="Vietnam" />
-                    <model:MonkeyModel Name="Capuchin Monkey"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"
-                                       Location="Central and South America" />
-                    <model:MonkeyModel Name="Red-shanked douc"
-                                       Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
-                                       Location="Vietnam" />
-                </x:Array>
-            </CollectionView.ItemsSource>
-
+        
+        <CollectionView Margin="12,0" 
+                        ItemsSource="{Binding Monkeys}">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical"
                                  Span="1"
@@ -51,7 +17,7 @@
             </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="model:MonkeyModel">
                     <Border StrokeShape="RoundRectangle 20">
                         <Grid ColumnDefinitions="auto, *"
                               RowDefinitions="*,*"

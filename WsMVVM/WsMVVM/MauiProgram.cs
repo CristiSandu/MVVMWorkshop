@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using WsMVVM.ViewModels;
 
 namespace WsMVVM;
@@ -22,6 +23,10 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<Views.PlaygroundPage>();
 		builder.Services.AddSingleton<PlaygroundPageViewModel>();
+        builder.Services.AddSingleton<Views.MainPage>();
+        builder.Services.AddSingleton<MainPageViewModel>();
+
+
 
         return builder.Build();
 	}

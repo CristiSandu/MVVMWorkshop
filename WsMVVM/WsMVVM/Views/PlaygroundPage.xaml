@@ -4,13 +4,14 @@
              xmlns:vm="clr-namespace:WsMVVM.ViewModels"
              x:DataType="vm:PlaygroundPageViewModel"
              x:Class="WsMVVM.Views.PlaygroundPage"
-             Title="{Binding Title}">
+             Title="{Binding Title, StringFormat='Page {0}'}">
+
     <Grid RowDefinitions=".5*,*">
-        <Label Text="Welcome to .NET MAUI!"
-               TextColor="{Binding RotationValue, Converter={StaticResource NumberToColor}}"
+        <Label Text="{Binding RotationValue, StringFormat= 'Welcome to .NET MAUI! {0:F2}'}"
                FontSize="{Binding SizeValue}"
                Rotation="{Binding Source={x:Reference rotationSlider}, Path=Value}"
                FontAttributes="{Binding CurrentFont}"
+               TextColor="{Binding RotationValue, Converter={StaticResource NumberToColor}}"
                VerticalOptions="Center"
                HorizontalOptions="Center" />
 
@@ -23,6 +24,7 @@
                     Maximum="360"
                     Minimum="0"
                     Value="{Binding RotationValue}" />
+
             <Button Text="Change Font Type"
                     Command="{Binding ChangeFontCommand}" />
         </VerticalStackLayout>

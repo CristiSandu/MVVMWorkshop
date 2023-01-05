@@ -1,6 +1,6 @@
 ﻿namespace WsMVVM.Models;
 
-internal class MonkeyModel
+public class MonkeyModel
 {
     private string name;
 
