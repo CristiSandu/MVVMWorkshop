@@ -10,7 +10,7 @@ Link-uri utile:
 
 ## Homework 
 
-![](/Img/homework.png)
+![](/Img/Homework.jpg)
 
 Observatii:
 - Cand apas pe save, sa se adauge instant in lista elementul din Entry 
